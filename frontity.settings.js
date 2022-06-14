@@ -15,7 +15,15 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://play.ddev.site"
+          // "url": "https://play.ddev.site",
+          "url": "https://test.frontity.org",
+          "postTypes": [
+            {
+              type: "destinations",
+              endpoint: "destinations",
+              archive: "/destinations"
+            }
+          ]
         }
       }
     },

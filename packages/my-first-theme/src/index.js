@@ -1,6 +1,7 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 import Root from './components'
+import link from '@frontity/html2react/processors/link'
 
 const myFirstTheme = {
   name: "my-first-theme",
@@ -8,10 +9,21 @@ const myFirstTheme = {
     theme: Root
   },
   state: {
-    theme: {}
+    theme: {
+      isUrlVisible: false
+    }
   },
   actions: {
-    theme: {}
+    theme: {
+      toggleUrl: ({ state }) => {
+        state.theme.isUrlVisible = !state.theme.isUrlVisible
+      },
+    }
+  },
+  libraries: {
+    html2react: {
+      processors: [link]
+    }
   }
 };
 
